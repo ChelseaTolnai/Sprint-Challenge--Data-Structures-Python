@@ -52,13 +52,30 @@ f.close()
 # Set Add and Check ==> 0.007300853729248047 seconds
 # Overall Time: O(2n) -> O(n) / Space: O(n)
 
-duplicates = []
-names = set()		# O(1)
-for name in names_1:	# O(n)
-    names.add(name)	# O(1)
-for name in names_2:	# O(n)
-    if name in names:	# O(1)
-        duplicates.append(name)	# O(1)
+# duplicates = []
+# names = set()		# O(1)
+# for name in names_1:	# O(n)
+#     names.add(name)	# O(1)
+# for name in names_2:	# O(n)
+#     if name in names:	# O(1)
+#         duplicates.append(name)	# O(1)
+
+
+# STRETCH - USING ONLY LISTS
+
+# List Only ==> 0.01655888557434082 seconds
+# Overall Time: O(n*log(n)) / Space: O(n)
+
+duplicates = []  # Time: O(n*log(n)) / Space: O(n)
+names = names_1 + names_2  # Time: O(1) / Space: O(n)
+names.sort()  # Time: O(n*log(n))
+for i in range(len(names)-1):  # Time: O(n)
+    if names[i] == names[i+1]:  # Time: O(1)
+        duplicates.append(names[i])  # Time: O(1)
+
+# This one actually finds all duplicate names whether if duplicate in one file or both. 
+# Therefore found 124 duplicates in total as opposed to the 64 which are only found in name1 file compared to name2
+# This means that names1 and or names2 files have their own duplicates as well.
 
 
 end_time = time.time()

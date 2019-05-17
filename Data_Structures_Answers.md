@@ -22,8 +22,10 @@ O(n) -> linear
 Binary Search Tree = Average: O(n*log(n)) -> loglinear ;  Worst O(n^2) -> quadratic
 Set Intersection = Average: O(n) -> linear ;  Worst O(n^2) -> quadratic
 Set Add and Check = O(n) -> linear
+List Data Only = O(n*log(n)) -> loglinear
 
 8. What is the space complexity of your optimized code in `names.py`?
 Binary Search Tree = O(n) -> linear
 Set Intersection = O(n) -> linear
 Set Add and Check = O(n) -> linear
+List Data Only = O(n) -> linear
